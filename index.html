@@ -244,7 +244,7 @@
       <div class="brand-mark">xpath<span>locator</span></div>
     </div>
     <h1>Privacy Policy</h1>
-    <p class="last-updated">Last updated: May 14, 2026 · Version 2.15.0</p>
+    <p class="last-updated">Last updated: May 17, 2026 · Version 2.16.0</p>
   </header>
 
   <!-- TL;DR — the answer for 90% of readers -->
@@ -356,14 +356,26 @@
 
   <h2>Permissions explained</h2>
   <p>
-    The extension requests four Chrome permissions:
+    The extension requests four Chrome permissions at install, plus one
+    optional broad permission that is granted only after you explicitly
+    accept a runtime prompt.
   </p>
+  <p style="margin-bottom: 6px;"><strong>At install (no broad access):</strong></p>
   <ul>
-    <li><code>&lt;all_urls&gt;</code> (host) — lets the extension inject its content script into your active tab when you click a mode button. <strong>Not used to read pages automatically</strong>; the extension declares no static content scripts.</li>
+    <li><code>activeTab</code> — lets the extension inject its content script into your <em>currently active tab</em> when you click the extension toolbar icon. This is the at-install fallback that ensures the extension works even if you decline the broader permission below.</li>
     <li><code>scripting</code> — the standard Manifest V3 API for the on-demand injection described above.</li>
     <li><code>storage</code> — used only for the three local-only values listed above.</li>
     <li><code>sidePanel</code> — renders the extension's UI in Chrome's side panel.</li>
   </ul>
+  <p style="margin-bottom: 6px;"><strong>Optional, requested at runtime (you decide):</strong></p>
+  <ul>
+    <li><code>&lt;all_urls&gt;</code> (host) — declared as <code>optional_host_permissions</code>, NOT granted at install. The first time you click a mode button, Chrome shows a dialog: <em>"Allow XPath Locator Generator on all sites?"</em> If you accept, the extension can run on any tab without re-authorization. If you decline, the extension falls back to <code>activeTab</code> behavior (works on the current tab; re-open via toolbar icon on each new tab).</li>
+  </ul>
+  <p>
+    Even after you grant the broad permission, the extension does <strong>not</strong>
+    attach to pages automatically — there are no static content scripts in the
+    manifest. Scripts only inject when you explicitly click a mode button.
+  </p>
   <p>
     The extension does NOT request <code>tabs</code>, <code>cookies</code>,
     <code>history</code>, <code>bookmarks</code>, <code>webRequest</code>,
