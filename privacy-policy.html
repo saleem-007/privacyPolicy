@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <title>Privacy Policy · XPath Locator Generator</title>
+  <meta name="description" content="Privacy policy for the XPath Locator Generator Chrome extension. We collect nothing, transmit nothing, and store only UI state locally on your device.">
+  <style>
+    :root {
+      --bg: #0e0f13;
+      --bg-card: #16181f;
+      --border: #262a35;
+      --text: #e6e8ee;
+      --text-dim: #9098a8;
+      --text-mute: #5e6577;
+      --accent: #b4ff39;
+      --accent-dim: #7cad22;
+      --danger: #ff6b6b;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+    /* ─── Header ──────────────────────────────────────────────────── */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 28px;
+      margin-bottom: 36px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .brand-mark {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+    .brand-mark span {
+      color: var(--accent);
+      font-weight: 400;
+    }
+    .meta {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-mute);
+      letter-spacing: 0.5px;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin: 0 0 12px;
+      letter-spacing: -0.5px;
+    }
+    .last-updated {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--text-mute);
+    }
+    /* ─── TL;DR card ──────────────────────────────────────────────── */
+    .tldr {
+      background: var(--bg-card);
+      border-left: 3px solid var(--accent);
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin: 0 0 40px;
+    }
+    .tldr-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .tldr-body {
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--text);
+      margin: 0;
+    }
+    /* ─── Sections ────────────────────────────────────────────────── */
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 40px 0 14px;
+      color: var(--text);
+      letter-spacing: -0.2px;
+    }
+    h2::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 16px;
+      background: var(--accent);
+      margin-right: 10px;
+      vertical-align: -2px;
+      border-radius: 1px;
+    }
+    p {
+      margin: 0 0 14px;
+      color: var(--text);
+    }
+    ul {
+      padding-left: 22px;
+      margin: 0 0 16px;
+    }
+    li {
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    /* ─── Storage table ───────────────────────────────────────────── */
+    .storage-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 8px;
+      font-size: 14px;
+      background: var(--bg-card);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .storage-table th,
+    .storage-table td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .storage-table th {
+      background: rgba(180, 255, 57, 0.06);
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .storage-table tr:last-child td { border-bottom: none; }
+    .storage-table code {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text);
+      background: rgba(180, 255, 57, 0.08);
+      padding: 1px 6px;
+      border-radius: 3px;
+    }
+    /* ─── Inline code ─────────────────────────────────────────────── */
+    code, .code-inline {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--text);
+      background: var(--bg-card);
+      padding: 2px 6px;
+      border-radius: 3px;
+      border: 1px solid var(--border);
+    }
+    /* ─── Never list (red border accent) ──────────────────────────── */
+    .never-list {
+      background: var(--bg-card);
+      border-left: 3px solid var(--text-mute);
+      border-radius: 6px;
+      padding: 18px 24px 18px 22px;
+      margin: 16px 0;
+    }
+    .never-list li {
+      list-style: none;
+      padding-left: 24px;
+      position: relative;
+      color: var(--text-dim);
+    }
+    .never-list li::before {
+      content: '×';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--text-mute);
+      font-weight: 700;
+      font-size: 17px;
+    }
+    .never-list ul {
+      padding-left: 0;
+      margin: 0;
+    }
+    /* ─── Contact card ────────────────────────────────────────────── */
+    .contact {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin: 40px 0 0;
+    }
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px dashed var(--accent-dim);
+    }
+    .contact a:hover {
+      color: var(--accent);
+      border-bottom-style: solid;
+    }
+    /* ─── Footer ──────────────────────────────────────────────────── */
+    footer {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-mute);
+      text-align: center;
+    }
+    /* ─── Mobile ──────────────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      main { padding: 28px 18px 60px; }
+      h1 { font-size: 26px; }
+      h2 { font-size: 17px; }
+      .tldr-body { font-size: 15px; }
+      .storage-table { font-size: 13px; }
+      .storage-table th, .storage-table td { padding: 10px 10px; }
+    }
+  </style>
+</head>
+<body>
+<main>
+
+  <header>
+    <div class="brand">
+      <div class="brand-mark">xpath<span>locator</span></div>
+    </div>
+    <h1>Privacy Policy</h1>
+    <p class="last-updated">Last updated: May 14, 2026 · Version 2.15.0</p>
+  </header>
+
+  <!-- TL;DR — the answer for 90% of readers -->
+  <div class="tldr">
+    <div class="tldr-label">TL;DR</div>
+    <p class="tldr-body">
+      The XPath Locator Generator extension <strong>does not collect any user data</strong>.
+      It makes <strong>zero network calls</strong> — no telemetry, no analytics, no error reporting.
+      A few small UI preferences are stored locally on your device only.
+    </p>
+  </div>
+
+  <h2>Who this applies to</h2>
+  <p>
+    This policy covers the <strong>XPath Locator Generator</strong> Chrome extension
+    ("the extension"), available on the Chrome Web Store. By installing and using the
+    extension, you agree to the terms described below.
+  </p>
+
+  <h2>What data we collect</h2>
+  <p>
+    <strong>None.</strong> The extension does not collect, transmit, sell, or share any
+    personal information, browsing activity, or usage data. There are no fetch requests,
+    XMLHttpRequest calls, WebSocket connections, beacons, or any other form of network
+    communication initiated by this extension. You can verify this by inspecting the
+    source code: search for <code>fetch(</code>, <code>XMLHttpRequest</code>,
+    <code>WebSocket</code>, or <code>sendBeacon</code> across the source files — there
+    will be no matches.
+  </p>
+
+  <h2>What data is stored on your device</h2>
+  <p>
+    The extension stores three small UI-state values locally using Chrome's
+    <code>chrome.storage.local</code> API. This data is on-device only and is never
+    transmitted, synced to your Google account, or shared with anyone:
+  </p>
+
+  <table class="storage-table">
+    <thead>
+      <tr>
+        <th>Key</th>
+        <th>What it stores</th>
+        <th>Why</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>lastResult</code></td>
+        <td>The most recent xpath you captured (xpath string, match count, alternatives, frame URL if you clicked inside an iframe)</td>
+        <td>So reopening the side panel during the same session shows your last result instead of an empty view</td>
+      </tr>
+      <tr>
+        <td><code>activeMode</code></td>
+        <td>Which mode (single / list / dynamic) is currently active</td>
+        <td>So the panel highlights the correct mode if you reopen it mid-session</td>
+      </tr>
+      <tr>
+        <td><code>altsExpanded</code></td>
+        <td>Whether the "Other Locator Strategies" block is expanded (boolean)</td>
+        <td>Remembers your UI preference across sessions</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    You can clear this data at any time from Chrome's settings: go to
+    <code>chrome://extensions</code>, find "XPath Locator Generator," click
+    "Details," then "Site settings" → "Clear data." Uninstalling the extension also
+    removes all stored data.
+  </p>
+
+  <h2>What we access (only when you ask)</h2>
+  <p>
+    When you click a mode button in the extension's side panel, the extension reads
+    the DOM of the page in your active tab. Specifically, when you click an element,
+    the extension reads:
+  </p>
+  <ul>
+    <li>The element's tag name, attributes, and visible text</li>
+    <li>The element's position in the DOM (ancestors, siblings)</li>
+    <li>Other elements on the page (to verify the generated xpath uniquely identifies your target)</li>
+    <li>For iframe content, the iframe's URL (so the generated xpath can include <code>driver.switchTo().frame(...)</code> guidance)</li>
+  </ul>
+  <p>
+    All of this happens locally in your browser. The information is used only to
+    compute the xpath that gets displayed in the panel — it is not transmitted anywhere,
+    and it is discarded as soon as the xpath is computed (the only thing saved is the
+    final xpath string itself, in the <code>lastResult</code> storage key above).
+  </p>
+  <p>
+    The extension does <strong>not</strong> run on pages you visit unless you explicitly
+    click a mode button. There are no static content scripts in the manifest, so the
+    extension has zero presence on pages you are just browsing.
+  </p>
+
+  <h2>What we never do</h2>
+  <div class="never-list">
+    <ul>
+      <li>We do not collect your name, email, or any identity information</li>
+      <li>We do not read or transmit your browsing history</li>
+      <li>We do not access your cookies, passwords, or form data</li>
+      <li>We do not track mouse movements, scroll behavior, or idle time</li>
+      <li>We do not use analytics, telemetry, or crash reporting services</li>
+      <li>We do not embed third-party SDKs, libraries, or trackers</li>
+      <li>We do not show advertisements or have any monetization mechanism</li>
+      <li>We do not sell or share data with anyone — there is no data to share</li>
+    </ul>
+  </div>
+
+  <h2>Permissions explained</h2>
+  <p>
+    The extension requests four Chrome permissions:
+  </p>
+  <ul>
+    <li><code>&lt;all_urls&gt;</code> (host) — lets the extension inject its content script into your active tab when you click a mode button. <strong>Not used to read pages automatically</strong>; the extension declares no static content scripts.</li>
+    <li><code>scripting</code> — the standard Manifest V3 API for the on-demand injection described above.</li>
+    <li><code>storage</code> — used only for the three local-only values listed above.</li>
+    <li><code>sidePanel</code> — renders the extension's UI in Chrome's side panel.</li>
+  </ul>
+  <p>
+    The extension does NOT request <code>tabs</code>, <code>cookies</code>,
+    <code>history</code>, <code>bookmarks</code>, <code>webRequest</code>,
+    <code>downloads</code>, <code>notifications</code>, or any other permission that
+    could read data outside of the explicit user-initiated capture flow.
+  </p>
+
+  <h2>Third parties</h2>
+  <p>
+    The extension uses no third-party services, SDKs, analytics providers, or external
+    code. All functionality is implemented in vanilla JavaScript bundled with the
+    extension. There are no remote scripts, no CDN dependencies, and no auto-updating
+    components that pull code from outside the published extension package.
+  </p>
+
+  <h2>Children's privacy</h2>
+  <p>
+    The extension is a developer tool. It is not directed at children under 13. As
+    described above, it does not collect data from any user, including children.
+  </p>
+
+  <h2>Changes to this policy</h2>
+  <p>
+    If the extension's data-handling practices ever change, this policy will be
+    updated, the "Last updated" date at the top will be revised, and the version
+    number in the extension's manifest will be incremented. Material changes will be
+    noted in the extension's changelog.
+  </p>
+
+  <div class="contact">
+    <h2 style="margin-top: 0;">Contact</h2>
+    <p style="margin-bottom: 0;">
+      Questions about this privacy policy or the extension's data practices?
+      Reach out through the support email listed on the
+      <a href="https://chromewebstore.google.com/" target="_blank" rel="noopener noreferrer">Chrome Web Store listing</a>
+      for the XPath Locator Generator.
+    </p>
+  </div>
+
+  <footer>
+    XPath Locator Generator · Manifest V3 · No data collection · No network calls
+  </footer>
+
+</main>
+</body>
+</html>
